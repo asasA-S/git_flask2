@@ -8,7 +8,14 @@ def top():
 
 @app.route("/menu")
 def menu():
-    return render_template("menu.html")    
+    return render_template("menu.html")
+
+@app.route("/result")
+def result():
+    a = request.args.get("a")
+    b = request.args.get("b")
+    c = int(a) * int(b)
+    return render_template("result.html", c=c) 
 
 @app.route("/menu2")
 def menu2():
